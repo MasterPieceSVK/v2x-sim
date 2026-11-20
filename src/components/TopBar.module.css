@@ -1,0 +1,432 @@
+.bar {
+  position: relative;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+
+.row {
+  display: grid;
+  /* Side groups take what they need; the player is centred in the space left between them,
+     so it can never be overlapped (it shifts a little instead). */
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+/* ---- brand ---- */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.brand b {
+  display: block;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+}
+
+.brand small {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.logo {
+  width: 26px;
+  height: 26px;
+  color: var(--accent);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.divider {
+  width: 1px;
+  height: 28px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.field span,
+.seed span {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.field select {
+  padding: 3px 8px;
+  max-width: 230px;
+}
+
+/* ---- player ---- */
+
+.player {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px 4px 6px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 50% !important;
+  background: none !important;
+  color: var(--muted);
+}
+
+.icon:hover {
+  color: var(--fg);
+  background: var(--hover) !important;
+}
+
+.icon svg,
+.play svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.play {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  border: none !important;
+  background: var(--accent) !important;
+  color: #06101d;
+  box-shadow: 0 0 0 4px rgba(78, 161, 255, 0.15);
+}
+
+.play:hover {
+  filter: brightness(1.1);
+}
+
+.play svg {
+  width: 16px;
+  height: 16px;
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 118px;
+  margin: 0 6px 0 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.clock b {
+  color: var(--fg);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.track {
+  display: block;
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.track span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+}
+
+.speed {
+  padding: 2px 6px !important;
+  font-size: 12px;
+  border-radius: 999px !important;
+}
+
+/* ---- right tools ---- */
+
+.tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px !important;
+  font-size: 13px;
+}
+
+.tool svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+.toolOn {
+  border-color: var(--accent) !important;
+  background: rgba(78, 161, 255, 0.14) !important;
+  color: var(--fg);
+}
+
+.editing {
+  padding: 2px 9px;
+  border: 1px solid;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.seed {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.seed input {
+  width: 68px;
+  padding: 3px 6px !important;
+  font-family: var(--mono);
+}
+
+/* ---- metrics strip ---- */
+
+.metrics {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  padding: 0 16px 8px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 18px 0;
+  border-left: 1px solid var(--border);
+}
+
+.group:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+
+.groupTitle {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.groupBody {
+  display: flex;
+  gap: 22px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 64px;
+}
+
+.metricLabel {
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.metricValue {
+  font-family: var(--mono);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.metricValue small {
+  margin-left: 3px;
+  font-size: 11px;
+  font-weight: normal;
+  color: var(--muted);
+}
+
+.warn .metricValue {
+  color: var(--warn);
+}
+
+.danger .metricValue {
+  color: var(--danger);
+}
+
+.meter {
+  display: block;
+  height: 3px;
+  margin-top: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.meter span {
+  display: block;
+  height: 100%;
+  background: currentColor;
+}
+
+.metric:not(.warn):not(.danger) .meter span {
+  background: var(--ok);
+}
+
+.warn .meter span {
+  background: var(--warn);
+}
+
+.danger .meter span {
+  background: var(--danger);
+}
+
+/* ---- computing progress: thin line along the bottom edge ---- */
+
+.computing {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: rgba(78, 161, 255, 0.15);
+}
+
+.computing span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.15s;
+}
+
+/* ---- narrower screens: drop text before stacking ---- */
+
+@media (max-width: 1560px) {
+  .brandText,
+  .divider,
+  .field span {
+    display: none;
+  }
+
+  .row {
+    gap: 10px;
+  }
+}
+
+/* Only on really tight screens do the tool buttons drop their text (tooltips still explain them). */
+@media (max-width: 1279px) {
+  .tool .label {
+    display: none;
+  }
+
+  .tool {
+    padding: 6px 8px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .player {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: center;
+  }
+
+  .groupTitle {
+    display: none;
+  }
+}
+
+/* ---- alignment: every control in the toolbar shares one height and centre line ---- */
+
+.field,
+.seed {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px !important;
+}
+
+.left > :is(select, button),
+.left > label > select,
+.left > div > button:first-child,
+.right > :is(select, button),
+.right > label > input {
+  height: 32px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.left select,
+.right input {
+  padding-left: 12px !important;
+  padding-right: 10px !important;
+}
+
+/* Room for the dropdown chevron (drawn 10 px from the right edge, 12 px wide). */
+.left select {
+  padding-right: 34px !important;
+}
+
+.editing {
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Round "?" button that opens the guide. */
+
+
+.player {
+  justify-self: center;
+}

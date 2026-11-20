@@ -1,0 +1,25 @@
+
+> poc@0.1.0 experiment
+> tsx scripts/experiment.ts highway-merge
+
+highway-merge 1hz   veh=30 bg=  0 denm=0  coll=0.00 aeb=0.3 aoi=570ms pdr=0.947 cbr=0.014  (5 s)
+highway-merge 2hz   veh=30 bg=  0 denm=0  coll=0.00 aeb=0.2 aoi=314ms pdr=0.933 cbr=0.028  (10 s)
+highway-merge 5hz   veh=30 bg=  0 denm=0  coll=0.00 aeb=0.3 aoi=153ms pdr=0.893 cbr=0.071  (15 s)
+highway-merge 10hz  veh=30 bg=  0 denm=0  coll=0.00 aeb=0.1 aoi=100ms pdr=0.824 cbr=0.141  (22 s)
+highway-merge etsi  veh=30 bg=  0 denm=0  coll=0.00 aeb=0.2 aoi=307ms pdr=0.912 cbr=0.044  (27 s)
+highway-merge 1hz   veh=30 bg=100 denm=0  coll=0.05 aeb=0.3 aoi=620ms pdr=0.900 cbr=0.064  (32 s)
+highway-merge 2hz   veh=30 bg=100 denm=0  coll=0.00 aeb=0.5 aoi=373ms pdr=0.838 cbr=0.127  (37 s)
+highway-merge 5hz   veh=30 bg=100 denm=0  coll=0.00 aeb=0.1 aoi=233ms pdr=0.656 cbr=0.319  (43 s)
+highway-merge 10hz  veh=30 bg=100 denm=0  coll=0.00 aeb=0.1 aoi=262ms pdr=0.349 cbr=0.637  (49 s)
+highway-merge etsi  veh=30 bg=100 denm=0  coll=0.40 aeb=0.5 aoi=396ms pdr=0.768 cbr=0.197  (54 s)
+highway-merge 1hz   veh=30 bg=200 denm=0  coll=0.25 aeb=0.8 aoi=672ms pdr=0.853 cbr=0.113  (59 s)
+highway-merge 2hz   veh=30 bg=200 denm=0  coll=0.10 aeb=0.1 aoi=446ms pdr=0.743 cbr=0.227  (64 s)
+highway-merge 5hz   veh=30 bg=200 denm=0  coll=0.00 aeb=0.3 aoi=401ms pdr=0.418 cbr=0.566  (70 s)
+highway-merge 10hz  veh=30 bg=200 denm=0  coll=21.00 aeb=78.0 aoi=1500ms pdr=0.000 cbr=1.000  (74 s)
+highway-merge etsi  veh=30 bg=200 denm=0  coll=1.35 aeb=2.1 aoi=505ms pdr=0.627 cbr=0.346  (79 s)
+highway-merge 1hz   veh=30 bg=300 denm=0  coll=0.60 aeb=2.4 aoi=724ms pdr=0.806 cbr=0.163  (83 s)
+highway-merge 2hz   veh=30 bg=300 denm=0  coll=0.20 aeb=0.8 aoi=533ms pdr=0.649 cbr=0.326  (88 s)
+highway-merge 5hz   veh=30 bg=300 denm=0  coll=3.45 aeb=9.6 aoi=848ms pdr=0.182 cbr=0.814  (93 s)
+highway-merge 10hz  veh=30 bg=300 denm=0  coll=21.45 aeb=78.8 aoi=1507ms pdr=0.000 cbr=1.000  (97 s)
+highway-merge etsi  veh=30 bg=300 denm=0  coll=3.65 aeb=6.0 aoi=629ms pdr=0.504 cbr=0.481  (102 s)
+Wrote 400 runs to results/highway-merge.csv and results/highway-merge-summary.csv

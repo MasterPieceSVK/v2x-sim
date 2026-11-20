@@ -1,0 +1,386 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(5, 7, 10, 0.72);
+}
+
+.dialog {
+  position: relative;
+  width: min(560px, 100%);
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 22px 26px 18px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  padding: 0 !important;
+  display: grid;
+  place-items: center;
+  border: none !important;
+  border-radius: 8px;
+  background: none !important;
+  color: var(--muted);
+}
+
+.close:hover {
+  background: var(--hover) !important;
+  color: var(--fg);
+}
+
+.step {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.art {
+  margin: 10px 0 6px;
+  padding: 10px;
+  background: #0d1216;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.dialog h2 {
+  margin: 12px 0 6px;
+  font-size: 20px;
+}
+
+.body {
+  min-height: 120px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.body p {
+  margin: 0 0 10px;
+}
+
+.legend {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.legend li {
+  margin-bottom: 6px;
+}
+
+.ok {
+  color: var(--ok);
+  font-weight: 600;
+}
+
+.bad {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.tries {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tryCard {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px !important;
+  text-align: left;
+  border-radius: 8px;
+  border-color: var(--border);
+}
+
+.tryCard:hover {
+  border-color: var(--accent) !important;
+}
+
+.tryCard b {
+  color: var(--accent);
+}
+
+.tryCard span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.hint {
+  margin: 4px 0 0 !important;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+.nav button {
+  min-width: 90px;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot,
+.dotOn {
+  width: 8px !important;
+  min-width: 0 !important;
+  height: 8px;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  border: none !important;
+  background: var(--border) !important;
+}
+
+.dotOn {
+  background: var(--accent) !important;
+}
+
+/* ---- illustration text and motion ---- */
+
+.svgText {
+  fill: var(--fg);
+  font-size: 13px;
+  font-family: system-ui, sans-serif;
+}
+
+.svgMuted {
+  fill: var(--muted);
+  font-size: 12px;
+  font-family: system-ui, sans-serif;
+}
+
+.svgBad {
+  fill: var(--danger);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: system-ui, sans-serif;
+}
+
+.tagText {
+  fill: #06101d;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: system-ui, sans-serif;
+}
+
+.wave {
+  fill: none;
+  stroke: #3ccf8e;
+  stroke-width: 2;
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: wave 1.8s ease-out infinite;
+}
+
+@keyframes wave {
+  from {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+
+.bubble {
+  animation: pop 0.4s ease-out both;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+.block {
+  animation: fill 0.3s ease-out both;
+}
+
+@keyframes fill {
+  from {
+    opacity: 0;
+  }
+}
+
+.draw {
+  stroke-dasharray: 520;
+  animation: draw 1.2s ease-out both;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 520;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave,
+  .bubble,
+  .block,
+  .draw {
+    animation: none;
+  }
+}
+
+/* tiny labels inside the screen miniature */
+.mini,
+.miniStrong,
+.miniAccent,
+.miniValue,
+.miniDark,
+.miniOk,
+.miniBadge {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 5.2px;
+}
+
+.mini {
+  fill: #8a94a6;
+}
+
+.miniStrong {
+  fill: #e8ecf2;
+  font-weight: 600;
+}
+
+.miniAccent {
+  fill: #4ea1ff;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.miniValue {
+  fill: #e8ecf2;
+  font-size: 7px;
+  font-weight: 600;
+  font-family: ui-monospace, Menlo, monospace;
+}
+
+.miniDark {
+  fill: #06101d;
+  font-weight: 700;
+}
+
+.miniOk {
+  fill: #3ccf8e;
+  font-weight: 600;
+}
+
+.miniBadge {
+  fill: #fff;
+  font-size: 4.4px;
+  font-weight: 700;
+}
+
+/* ---- "Reading the screen": annotation callouts + spotlight ---- */
+
+/* An annotation colour the app never uses, so the callouts read as notes on the picture. */
+.callout {
+  cursor: pointer;
+}
+
+.calloutGlow {
+  fill: rgba(198, 255, 61, 0.22);
+}
+
+.calloutDot {
+  fill: #c6ff3d;
+  stroke: #0b0e13;
+  stroke-width: 2;
+}
+
+.calloutText {
+  fill: #0b0e13;
+  font-size: 11px;
+  font-weight: 800;
+  font-family: system-ui, sans-serif;
+  pointer-events: none;
+}
+
+.callout:hover .calloutGlow {
+  fill: rgba(198, 255, 61, 0.38);
+}
+
+.spotDim {
+  fill: rgba(5, 7, 10, 0.72);
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+
+.spotRing {
+  fill: none;
+  stroke: #c6ff3d;
+  stroke-width: 1.4;
+  pointer-events: none;
+}
+
+.spotList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.spotList li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 5px 8px;
+  margin: 0 -8px 2px;
+  border-radius: 8px;
+  cursor: default;
+  outline: none;
+  transition: opacity 0.18s ease, background 0.18s ease;
+}
+
+.spotList .num {
+  flex-shrink: 0;
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: #c6ff3d;
+  color: #0b0e13;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.spotList .dimmed {
+  opacity: 0.35;
+}
+
+.spotList .lit {
+  background: rgba(198, 255, 61, 0.08);
+}

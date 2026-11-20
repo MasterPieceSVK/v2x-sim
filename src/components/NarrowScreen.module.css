@@ -1,0 +1,78 @@
+/* Hidden on screens that are wide enough; covers everything below 900 px. */
+.screen {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  .screen {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: 24px 16px;
+    background: var(--bg);
+    overflow-y: auto;
+  }
+}
+
+.card {
+  max-width: 420px;
+  text-align: center;
+}
+
+.art {
+  width: 150px;
+  height: auto;
+  margin: 0 auto 18px;
+  display: block;
+  fill: var(--panel-2);
+  stroke: var(--muted);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.screenFill {
+  fill: #0d1216;
+  stroke: none;
+}
+
+.road {
+  fill: #252b33;
+  stroke: none;
+}
+
+.car {
+  fill: var(--accent);
+  stroke: none;
+}
+
+.car2 {
+  fill: var(--ok);
+  stroke: none;
+}
+
+.card h1 {
+  margin: 0 0 10px;
+  font-size: 22px;
+}
+
+.card p {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.card p b {
+  color: var(--fg);
+}
+
+.anyway {
+  background: none !important;
+  border: none !important;
+  color: var(--accent);
+  text-decoration: underline;
+  font-size: 14px;
+  padding: 6px 10px;
+}
